@@ -1,0 +1,23 @@
+classdef Square
+    % Finds the square of any number
+    
+    properties
+        number;
+        square;
+    end
+    
+    methods
+        function obj = Square(number)
+            if(nargin==1)
+                obj.number = number;
+              
+            end
+        end
+        
+        function sqa = sq(obj)
+            sqa = obj.number*obj.number;
+            obj.square = sqa;
+        end    
+    end
+end
+
