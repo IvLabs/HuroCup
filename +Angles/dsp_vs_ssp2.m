@@ -1,5 +1,5 @@
 %Taking dsp as 5% of half of step time
-%In this code half time period consists of one dsp and one ssp
+%In this code half time period consists of stance phase of walking cycle.
 clc
 clear all
 close all
