@@ -220,19 +220,9 @@ def send_data(data):
 
     except:
         
-        raise HerkulexError("could not communicate with motors")  
-        time.sleep(0.1)  
-#edited by me
-##########################
-       # try:
-        
-        # SERPORT.write(stringtosend.decode('string-escape'))
-         #print stringtosend
+        raise HerkulexError("could not communicate with motors")
 
-        #except:
-        # raise HerkulexError("still could not communicate with motors")  
-        
-################################
+
 def clear_errors():
     """ Clears the errors register of all Herkulex servos
     Args:
@@ -301,17 +291,8 @@ def get_model(servoid):
       
         return ord(rxdata[9])&0xFF
     except:
-        
-########
-        try:
-          time.sleep(1)
-          rxdata = SERPORT.read(12)
-      
-          return ord(rxdata[9])&0xFF
-        except:
-          raise HerkulexError("could not communicate with motors")
+        raise HerkulexError("could not communicate with motors")
 
-#######################################3
 
 class servo:
     """ The servo class
@@ -578,7 +559,7 @@ class servo:
         rxdata = []
         try:
             rxdata = SERPORT.read(13)
-            print "hello"
+            
             print rxdata 
             return ord(rxdata[9])
         except HerkulexError:
@@ -835,4 +816,3 @@ class HerkulexError(Exception):
     def __init__(self,  message):
         super(HerkulexError, self).__init__(message)
         self.message = message
-
