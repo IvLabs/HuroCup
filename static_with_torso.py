@@ -35,10 +35,11 @@ r_ankle_roll  = herkulex.servo(6)
 #r_hand_yaw   = herkulex.servo(18)
 
 ## Declaration ##
+s=401
 angles = [[0]*10 for k in range(s)]
 motor_id = [4, 2, 10, 5, 7, 12, 8, 1, 11, 6]
 delay=1.5
-s=401
+
 ############################
 file_location = "/home/surabhi/Desktop/static_walk/static_with_torso.xlsx"
 workbook = xlrd.open_workbook(file_location)
